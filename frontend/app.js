@@ -1,3 +1,9 @@
+app.use(express.static(path.join(__dirname, "../frontend")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
+
 const form = document.getElementById("student-form");
 const tableBody = document.querySelector("#students-table tbody");
 const clearBtn = document.getElementById("clear-btn");

@@ -1,13 +1,14 @@
 const mysql = require("mysql2/promise");
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  host: centerbeam.proxy.rlwy.net,
+  user: root,
+  password: yjhuOsQmeoFHIEYAyAyjfSMrrEFBcMDD,
+  database: railway,
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  port: 24704
 });
 
 module.exports = pool;

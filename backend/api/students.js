@@ -2,6 +2,27 @@ const express = require("express");
 const pool = require("../db");
 const router = express.Router();
 
+// const express = require("express");
+const path = require("path");
+// const pool = require("./db"); // MySQL connection
+
+const app = express();
+app.use(express.json());
+
+// API routes
+app.use("/api/students", require("./api/students"));
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
 // Middleware to parse JSON
 router.use(express.json());
 
