@@ -1,3 +1,5 @@
+show databases;
+use students;
 CREATE TABLE IF NOT EXISTS students (
   Person_Id INT AUTO_INCREMENT PRIMARY KEY,
   Name VARCHAR(100) NOT NULL,
@@ -10,3 +12,5 @@ INSERT INTO students (Name, Email, Occupation) VALUES
 ('Venkat', 'venkat@gmail.com', 'Professor'),
 ('Balu', 'balu@gmail.com', 'Doctor'),
 ('Ram', 'ram@gmail.com', 'Software');
+
+select * FROM students;
